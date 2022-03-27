@@ -1,3 +1,15 @@
+## Como utilizar com Docker
+
+De forma mais simples, basta rodar estes comandos na raíz do projeto:
+
+``` make dbuild ```
+
+Para rodar os teste:
+``` make integration-tests ```
+
+A documentacao está:
+``` http://0.0.0.0:8000/docs ```
+
 ## Endpoints
 
 1 – Registering a vessel. The vessel data input is its code, which can’t be repeated (return the HTTP code appropriate and an error
@@ -19,7 +31,7 @@ POST: api/v1/equipments/{vessel_code}
 3 – Setting an equipment’s status to inactive. The input data should be one or a list of equipment code.
 
 ```
-PATCH: api/v1/equipments/{equipments_code}/inactivate
+NOT
 ```
 
 4 – Returning all active equipment of a vessel Feel free to use the programming language and tools you would like.
@@ -44,7 +56,7 @@ GET: api/v1/order/total-costs/{equipment_code}
 7 -- Return the total cost in operation of a set of equipments by name.
 
 ```
-Pensar depois...
+NOT
 ```
 
 8 -- Return the average cost in operation in each vessel.
@@ -52,3 +64,4 @@ Pensar depois...
 ```
 GET: api/v1/order/average-costs
 ```
+

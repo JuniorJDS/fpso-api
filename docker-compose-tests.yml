@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: pytest
+    ports:
+      - 8000:8000
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql://api123:api123@db/api_db
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=api123
+      - POSTGRES_PASSWORD=api123
+      - POSTGRES_DB=api_db
+    ports:
+      - 5433:5432
